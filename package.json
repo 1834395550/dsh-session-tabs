@@ -1,0 +1,40 @@
+{
+  "name": "dsh-session-tabs",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Browser-style Session tab bar for the DSH Web GUI: a full-width strip of tabs at the top of the window, one tab per Session, Sessions grouped per Workspace in collapsible boxes.",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "tabs",
+    "session-tabs",
+    "web-ui"
+  ],
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  }
+}
