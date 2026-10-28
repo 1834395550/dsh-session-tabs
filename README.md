@@ -53,15 +53,29 @@ DSH 原来靠左侧栏在会话之间跳：侧栏必须一直占着宽度，切�
 
 前提：已经装好 DSH，并且能在 Web GUI 里管理插件。
 
-**从 GitHub 安装**（推荐）：在 DSH 的插件管理里安装，地址填
+### 方式 A：从 Release 安装（推荐，**不需要 Git**）
+
+在 DSH 的插件管理里安装，地址填：
+
+```
+https://github.com/1834395550/dsh-session-tabs/releases/latest/download/dsh-session-tabs.tgz
+```
+
+这个地址永远指向最新版本；想固定版本就换成
+`.../releases/download/v1.0.1/dsh-session-tabs-1.0.1.tgz`。
+
+### 方式 B：从 GitHub 仓库安装（需要本机装有 Git）
 
 ```
 github:1834395550/dsh-session-tabs
 ```
 
-也接受完整地址 `https://github.com/1834395550/dsh-session-tabs`，或 Release 里下载的 `.tar.gz` / `.tgz`。
+> ⚠️ 这种方式依赖本机的 `git` 命令（pnpm 要用 `git ls-remote` 解析仓库）。
+> 如果报 `ERR_PNPM_GIT_RESOLVE_FAILED ... 'git' 不是内部或外部命令`，说明这台机器没装 Git —— 要么装一个 Git，要么改用**方式 A**。
 
-**从本地目录安装**：把仓库克隆到任意位置，然后在插件管理里安装那个**目录的绝对路径**。
+### 方式 C：从本地目录安装
+
+把仓库克隆到任意位置，然后在插件管理里安装那个**目录的绝对路径**。
 
 装好不需要重启，标签栏立刻出现在标题栏下方。会话与标签状态都在客户端，装卸插件都不会动到你的对话数据。
 

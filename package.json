@@ -1,6 +1,6 @@
 {
   "name": "dsh-session-tabs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Browser-style Session tab bar for the DSH Web GUI: a full-width strip of tabs at the top of the window, one tab per Session, Sessions grouped per Workspace in collapsible boxes.",
   "keywords": [

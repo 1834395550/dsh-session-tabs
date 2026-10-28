@@ -53,15 +53,30 @@ This plugin turns the Sessions you have open into a row of tabs, and each projec
 
 You need DSH installed, with plugin management available in the Web GUI.
 
-**From GitHub** (recommended): install this package in DSH's plugin manager with the address
+### Option A: from a release tarball (recommended, **no Git needed**)
+
+Install this address in DSH's plugin manager:
+
+```
+https://github.com/1834395550/dsh-session-tabs/releases/latest/download/dsh-session-tabs.tgz
+```
+
+That URL always serves the newest version. To pin one, use
+`.../releases/download/v1.0.1/dsh-session-tabs-1.0.1.tgz`.
+
+### Option B: from the GitHub repository (requires Git on this machine)
 
 ```
 github:1834395550/dsh-session-tabs
 ```
 
-`https://github.com/1834395550/dsh-session-tabs` works too, as does a `.tar.gz` / `.tgz` from a Release.
+> ⚠️ This form makes pnpm resolve the repo with `git ls-remote`, so `git` must be on `PATH`.
+> If you get `ERR_PNPM_GIT_RESOLVE_FAILED ... 'git' is not recognized as an internal or external command`,
+> Git is missing on that machine — install it, or use **Option A**.
 
-**From a local checkout**: clone the repo anywhere and install that **absolute directory path** through the plugin manager.
+### Option C: from a local checkout
+
+Clone the repo anywhere and install that **absolute directory path** through the plugin manager.
 
 No restart needed: the strip appears below the title strip immediately. Sessions and tab state live in the client, so installing or removing the plugin never touches your conversations.
 
