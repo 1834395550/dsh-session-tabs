@@ -53,6 +53,8 @@ DSH 原来靠左侧栏在会话之间跳：侧栏必须一直占着宽度，切�
 
 前提：已经装好 DSH，并且能在 Web GUI 里管理插件。
 
+> 在 DSH 插件市场（dsh-market）里搜 `session tabs` 即可一键安装——收录申请已在 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) 队列里，通过后市场会直接显示。在那之前用下面的方式 A。
+
 ### 方式 A：从 Release 安装（推荐，**不需要 Git**）
 
 在 DSH 的插件管理里安装，地址填：
@@ -62,7 +64,7 @@ https://github.com/1834395550/dsh-session-tabs/releases/latest/download/dsh-sess
 ```
 
 这个地址永远指向最新版本；想固定版本就换成
-`.../releases/download/v1.0.1/dsh-session-tabs-1.0.1.tgz`。
+`.../releases/download/v1.0.2/dsh-session-tabs-1.0.2.tgz`。
 
 ### 方式 B：从 GitHub 仓库安装（需要本机装有 Git）
 

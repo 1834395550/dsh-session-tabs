@@ -1,6 +1,6 @@
 {
   "name": "dsh-session-tabs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "Browser-style Session tab bar for the DSH Web GUI: a full-width strip of tabs at the top of the window, one tab per Session, Sessions grouped per Workspace in collapsible boxes.",
   "keywords": [
@@ -11,22 +11,52 @@
     "session-tabs",
     "web-ui"
   ],
+  "author": "1834395550",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1834395550/dsh-session-tabs.git"
+  },
+  "homepage": "https://github.com/1834395550/dsh-session-tabs#readme",
+  "bugs": {
+    "url": "https://github.com/1834395550/dsh-session-tabs/issues"
+  },
   "exports": {
     ".": "./index.js",
-    "./client": "./client.js"
+    "./client": "./client.js",
+    "./package.json": "./package.json"
   },
   "files": [
     "index.js",
     "client.js",
     "cordis.patch.yml",
+    "screenshots.json",
     "README.md",
     "README.en.md",
     "LICENSE"
   ],
+  "peerDependencies": {
+    "@deepseek-ai/dsh-client-ui-layout": ">=0.0.1-rc.1 <0.1.0-0 || >=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-workspace": ">=0.0.1-rc.1 <0.1.0-0 || >=0.2.0-rc.1 <0.3.0-0",
+    "react": ">=18.2.0 <19"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-client-ui-layout": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-client-ui-workspace": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "engines": {
+      "dsh": ">=0.2.0-rc.1 <0.3.0-0"
     },
     "client": {
       "platform": "web",

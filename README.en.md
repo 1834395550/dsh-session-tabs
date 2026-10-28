@@ -53,6 +53,8 @@ This plugin turns the Sessions you have open into a row of tabs, and each projec
 
 You need DSH installed, with plugin management available in the Web GUI.
 
+> It will also be installable from the DSH plugin market (dsh-market) by searching `session tabs` — the listing request is queued with [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin). Until it is merged, use Option A.
+
 ### Option A: from a release tarball (recommended, **no Git needed**)
 
 Install this address in DSH's plugin manager:
@@ -62,7 +64,7 @@ https://github.com/1834395550/dsh-session-tabs/releases/latest/download/dsh-sess
 ```
 
 That URL always serves the newest version. To pin one, use
-`.../releases/download/v1.0.1/dsh-session-tabs-1.0.1.tgz`.
+`.../releases/download/v1.0.2/dsh-session-tabs-1.0.2.tgz`.
 
 ### Option B: from the GitHub repository (requires Git on this machine)
 
