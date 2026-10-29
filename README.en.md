@@ -66,6 +66,17 @@ https://github.com/1834395550/dsh-session-tabs/releases/latest/download/dsh-sess
 That URL always serves the newest version. To pin one, use
 `.../releases/download/v1.0.2/dsh-session-tabs-1.0.2.tgz`.
 
+### Option A-2: when `github.com` is unreachable (jsDelivr)
+
+In mainland China `github.com` often does not answer (symptoms: `UND_ERR_HEADERS_TIMEOUT`, `ETIMEDOUT`, or an install that sits on `HEAD https://github.com/...` forever). The same tarball is committed at the repo root and served by the jsDelivr CDN — measured at 2.5 s, no Git, no proxy:
+
+```
+https://cdn.jsdelivr.net/gh/1834395550/dsh-session-tabs@main/dsh-session-tabs.tgz
+```
+
+> jsDelivr caches `@main` for about 12 hours; for the newest build use a commit ref (e.g. `@4cde63e`) or Option A.
+> Fully offline alternative: download that `.tgz` in a browser and pass its **absolute local path** (e.g. `C:\Users\you\Downloads\dsh-session-tabs.tgz`) to the plugin manager.
+
 ### Option B: from the GitHub repository (requires Git on this machine)
 
 ```
