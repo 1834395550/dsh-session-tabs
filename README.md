@@ -66,6 +66,17 @@ https://github.com/1834395550/dsh-session-tabs/releases/latest/download/dsh-sess
 这个地址永远指向最新版本；想固定版本就换成
 `.../releases/download/v1.0.2/dsh-session-tabs-1.0.2.tgz`。
 
+### 方式 A-2：github.com 连不上时（jsDelivr 直链）
+
+国内网络经常连不上 `github.com`（症状：`UND_ERR_HEADERS_TIMEOUT` / `ETIMEDOUT` / 一直卡在 `HEAD https://github.com/...`）。压缩包同时放了一份在仓库根目录，由 jsDelivr CDN 分发，实测 2.5 秒装完、不需要 Git、不需要代理：
+
+```
+https://cdn.jsdelivr.net/gh/1834395550/dsh-session-tabs@main/dsh-session-tabs.tgz
+```
+
+> `@main` 会缓存约 12 小时；想确保拿到最新版，把 `@main` 换成具体提交（如 `@4cde63e`）或改用方式 A。
+> 嫌麻烦还有一种**完全离线**的装法：用浏览器把上面任一 `.tgz` 下载到本地，然后在插件管理里填那个**文件的绝对路径**（如 `C:\Users\you\Downloads\dsh-session-tabs.tgz`）。
+
 ### 方式 B：从 GitHub 仓库安装（需要本机装有 Git）
 
 ```
