@@ -93,6 +93,23 @@ Clone the repo anywhere and install that **absolute directory path** through the
 
 No restart needed: the strip appears below the title strip immediately. Sessions and tab state live in the client, so installing or removing the plugin never touches your conversations.
 
+### Install stuck on Windows? (known gotcha)
+
+If you previously installed this plugin with **Option C (local checkout) or a `link:` dependency**, installing it from an Option A / A-2 URL afterwards fails at the last step with:
+
+```
+[ERR_PNPM_EPERM] [importPackage ...\node_modules\dsh-session-tabs] EPERM: operation not permitted,
+rename '...\dsh-session-tabs_tmp_1234_1' -> '...\dsh-session-tabs'
+```
+
+and the installer appears to spin forever. Option C leaves a **junction** in `node_modules` that points at your checkout, and Windows cannot rename a new directory over an existing one, so pnpm keeps failing. To fix it:
+
+1. Uninstall dsh-session-tabs in the plugin manager;
+2. delete the leftover directory `C:\Users\<you>\.dsh\profiles\desktop\node_modules\dsh-session-tabs` (only that directory — your checkout is untouched);
+3. install again from an Option A / A-2 URL; it takes about three seconds.
+
+A machine that never had a local install does not hit this.
+
 ## Usage
 
 | Action | Effect |

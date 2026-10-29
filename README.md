@@ -92,6 +92,23 @@ github:1834395550/dsh-session-tabs
 
 装好不需要重启，标签栏立刻出现在标题栏下方。会话与标签状态都在客户端，装卸插件都不会动到你的对话数据。
 
+### 装不上 / 一直转圈？（Windows 上的一个已知坑）
+
+如果你**之前用方式 C（本地目录）或 `link:` 装过**这个插件，再改用方式 A / A-2 的网址安装时，pnpm 会在最后一步报：
+
+```
+[ERR_PNPM_EPERM] [importPackage ...\node_modules\dsh-session-tabs] EPERM: operation not permitted,
+rename '...\dsh-session-tabs_tmp_1234_1' -> '...\dsh-session-tabs'
+```
+
+界面上的表现就是**一直卡着装不完**。原因：方式 C 会在 `node_modules` 里留下一个指向源码目录的**目录联接（junction）**，而 Windows 不允许把新目录改名覆盖到已存在的目录上，于是 pnpm 反复失败。解决办法：
+
+1. 在插件管理里先**卸载** dsh-session-tabs；
+2. 删掉遗留的目录：`C:\Users\<你>\.dsh\profiles\desktop\node_modules\dsh-session-tabs`（只删这一个目录，不会影响你仓库里的源码）；
+3. 再用方式 A / A-2 的地址安装，3 秒左右完成。
+
+全新机器不会遇到这个问题——那里 `node_modules` 里没有旧目录。
+
 ## 使用
 
 | 操作 | 效果 |
